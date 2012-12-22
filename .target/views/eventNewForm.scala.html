@@ -1,0 +1,24 @@
+@(eventForm: Form[Event]) 
+@import helper._ 
+@import play.api.data.FormError
+
+@title = {
+    Add a new contact <small><a href="routes.BuildingController.buildings">Or edit an existing contact</a></small>
+}
+
+
+@main(title, nav = "buildings") {
+
+<h2>create event</h2>
+
+
+
+@form(routes.BuildingController.saveEvent) {
+@inputText(eventForm("name"),'_label -> "nameppppppp")
+@inputText(eventForm("description"))
+
+<div class="actions">
+	<input type="submit" value="Create"> or <a
+		href="routes.BuildingController.buildings()" class="btn">Cancel</a>
+</div>
+} }

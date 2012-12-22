@@ -1,0 +1,36 @@
+@(tasks2: List[Task2], taskForm2: Form[Task2])
+
+@import helper._
+
+@title = {
+    Add a new contact <small><a href="@routes.Application.tasks2">Or edit an existing contact</a></small>
+}
+
+
+@main(title, nav = "tasks2") {
+    
+    <h1>@tasks2.size task(s)</h1>
+    
+    <ul>
+        @tasks2.map { task2 =>
+            <li>
+                @task2.label
+                
+                @form(routes.Application.deleteTask2(task2.id)) {
+                    <input type="submit" value="Delete">
+                }
+            </li>
+        }
+    </ul>
+    
+    <h2>Add a new task</h2>
+    
+    @form(routes.Application.newTask2) {
+        
+        @inputText(taskForm2("label")) 
+        @inputText(taskForm2("description"))         
+        <input type="submit" value="Create">
+        
+    }
+    
+}

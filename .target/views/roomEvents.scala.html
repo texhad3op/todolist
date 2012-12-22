@@ -1,0 +1,30 @@
+@(events:List[Event])
+
+@import helper._
+
+@title = {
+    Add a new contact <small><a href="routes.Application.createRoom()">Or edit an existing contact</a></small>
+}
+
+
+@main(title, nav = "buildings") {
+    
+     
+    <a href="@routes.BuildingController.createEvent()">Add a new Event</a>
+    <br>
+    <br>
+    
+<table border="1">
+            <tr>
+    <td>date</td><td>name</td><td>description</td>
+                </tr>
+        @events.map { event: Event =>
+            <tr>
+                <td>@event.registrationDate</td>
+                <td>@event.name</td>
+                <td>@event.description</td>
+            </tr>
+        }
+</table>    
+   
+}
