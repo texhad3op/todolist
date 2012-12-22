@@ -1,0 +1,41 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.Application.index
+
+# Tasks          
+GET     /tasks                  controllers.Application.tasks
+POST    /tasks                  controllers.Application.newTask
+POST    /tasks/:id/delete       controllers.Application.deleteTask(id: Long)
+
+GET     /buildings                  controllers.BuildingController.buildings
+GET     /createBuilding             controllers.BuildingController.createBuilding
+POST    /createBuilding             controllers.BuildingController.saveBuilding
+POST    /buildings/:id/delete       controllers.BuildingController.deleteBuilding(id:Long)
+
+GET      /rooms/:buildingId           controllers.BuildingController.rooms(buildingId:Long)
+GET     /createRoom             controllers.BuildingController.createRoom
+POST    /createRoom             controllers.BuildingController.saveRoom
+GET     /all             controllers.BuildingController.all
+GET     /all2             controllers.BuildingController.all2
+
+GET     /roomEvents/:id             controllers.BuildingController.roomEvents(id: Long)
+GET     /createEvent             controllers.BuildingController.createEvent
+POST    /createEvent             controllers.BuildingController.saveEvent
+
+
+
+GET     /tasks2                  controllers.Application.tasks2
+POST    /tasks2                  controllers.Application.newTask2
+POST    /tasks2/:id/delete       controllers.Application.deleteTask2(id: Long)
+
+GET     /jsontest                  controllers.BuildingController.jsontest
+GET     /sayHello                  controllers.BuildingController.sayHello
+GET     /sayHello2                  controllers.BuildingController.sayHello2
+GET     /sayHello3                  controllers.BuildingController.sayHello3
+
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)

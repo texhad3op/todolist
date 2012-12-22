@@ -1,0 +1,33 @@
+@(building: Option[Building],list:List[(Room, Option[Event])])
+
+@import helper._
+
+@title = {
+    Add a new contact <small><a href="routes.Application.createRoom()">Or edit an existing contact</a></small>
+}
+
+
+@main(title, nav = "buildings") {
+    
+    <h1>@building.map(_.name).getOrElse("")</h1><br>
+    <h1>@building.map(_.address).getOrElse("")</h1><br>   
+    <h1>@building.map(_.description).getOrElse("")</h1><br>        
+    <a href="@routes.BuildingController.createRoom()">Add a new Room</a>
+    <br>
+    <br>
+    
+<table border="1">
+            <tr>
+    <td>floor</td><td>roomnumber</td><td>eventdate</td><td>short description</td>
+                </tr>
+        @list.map { roomAndEvent: (Room, Option[Event]) =>
+            <tr>
+                <td>@roomAndEvent._1.floor.toString</td>
+                <td><a href="@routes.BuildingController.roomEvents(roomAndEvent._1.id)">@roomAndEvent._1.number.toString</a></td>
+                <td>@roomAndEvent._2.map(_.registrationDate).getOrElse("---")</td><td> @roomAndEvent._2.map(_.name).getOrElse("---")</td>
+   
+            </tr>
+        }
+</table>    
+   
+}

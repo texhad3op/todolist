@@ -1,0 +1,26 @@
+@(buildings: List[Building])
+
+@import helper._
+
+@title = {
+    Add a new contact <small><a href="@routes.BuildingController.buildings">Or edit an existing contact</a></small>
+}
+
+
+@main(title, nav = "buildings") {
+    
+    <h1>@buildings.size building(s)</h1><br>
+    <a href="@routes.BuildingController.createBuilding()">Add a new building</a>
+    <br>
+    <ul>
+        @buildings.map { building =>
+            <li>
+                <a href="@routes.BuildingController.rooms(building.id)">@building.name</a>
+                @form(routes.BuildingController.deleteBuilding(building.id)) {
+                    <input type="submit" value="Delete">
+                }        
+            </li>
+        }
+    </ul>
+    
+}

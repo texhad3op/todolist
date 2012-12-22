@@ -1,0 +1,31 @@
+@(roomForm: Form[Room], buildingId:Long) 
+@import helper._ 
+@import play.api.data.FormError
+
+@title = {
+    Add a new contact <small><a href="routes.BuildingController.rooms">Or edit an existing contact</a></small>
+}
+
+
+@main(title, nav = "rooms") {
+
+<h2>create building</h2>
+<ul>
+	@roomForm.errors.map { error:FormError =>
+	@if(error.key.equals("")){
+	<li>!@error.key! @error.message</li> 
+	}
+	}
+</ul>
+
+
+@form(routes.BuildingController.saveRoom) {
+@inputText(roomForm("number"),'_label -> "room number")
+@inputText(roomForm("floor"),'_label -> "floor")
+
+
+<div class="actions">
+	<input type="submit" value="Create"> or <a
+		href="@routes.BuildingController.rooms(buildingId)" class="btn">Cancel</a>
+</div>
+} }
