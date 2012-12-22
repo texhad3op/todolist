@@ -1,25 +1,21 @@
-@(rb: List[(Room, Building)])
+@(rb: List[(Room, Building)]) @import helper._ @title = { Add a new
+contact
+<small><a href="routes.Application.createRoom()">Or edit an
+		existing contact</a></small>
+} @main(title, nav = "buildings") {
 
-@import helper._
-
-@title = {
-    Add a new contact <small><a href="routes.Application.createRoom()">Or edit an existing contact</a></small>
-}
-
-
-@main(title, nav = "buildings") {
-    
-    <br>
-    <br>
+<br>
+<br>
 
 <table border="1">
-    
-        @rb.map { roomAndBuilding: (Room, Building) =>
-            <tr>
-                <td>@roomAndBuilding._1.number.toString</td><td> @roomAndBuilding._2.address</td>
-   
-            </tr>
-        }
+
+	@rb.map { roomAndBuilding: (Room, Building) =>
+	<tr>
+		<td>@roomAndBuilding._1.number.toString</td>
+		<td>@roomAndBuilding._2.address</td>
+
+	</tr>
+	}
 </table>
-    
+
 }
