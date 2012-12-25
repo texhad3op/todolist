@@ -20,65 +20,48 @@ object main extends BaseScalaTemplate[play.api.templates.Html,Format[play.api.te
         _display_ {
 
 Seq[Any](format.raw/*1.48*/("""
-
 <!DOCTYPE html>
-
 <html>
-    <head>
-        <title>Form samples</title>
-        <link rel="stylesheet" media="screen" href=""""),_display_(Seq[Any](/*8.54*/routes/*8.60*/.Assets.at("stylesheets/bootstrap.css"))),format.raw/*8.99*/("""">
-        <link rel="stylesheet" media="screen" href=""""),_display_(Seq[Any](/*9.54*/routes/*9.60*/.Assets.at("stylesheets/main.css"))),format.raw/*9.94*/("""">
-        <link rel="shortcut icon" type="image/png" href=""""),_display_(Seq[Any](/*10.59*/routes/*10.65*/.Assets.at("images/favicon.png"))),format.raw/*10.97*/("""">
-        <script src=""""),_display_(Seq[Any](/*11.23*/routes/*11.29*/.Assets.at("javascripts/jquery-1.7.1.min.js"))),format.raw/*11.74*/("""" type="text/javascript"></script>
-    </head>
-    <body>
-        
-        <div class="topbar">
-            <div class="fill">
-                <div class="container">
-                    <a class="brand" href=""""),_display_(Seq[Any](/*18.45*/routes/*18.51*/.Application.index())),format.raw/*18.71*/("""">Forms</a>
-                    <ul class="nav">
-                        <li class=""""),_display_(Seq[Any](/*20.37*/("active".when(nav == "tasks")))),format.raw/*20.68*/("""">
-                            <a href=""""),_display_(Seq[Any](/*21.39*/routes/*21.45*/.Application.tasks)),format.raw/*21.63*/("""">Tasks</a>
-                        </li>
-                        <li class=""""),_display_(Seq[Any](/*23.37*/("active".when(nav == "buildings")))),format.raw/*23.72*/("""">
-                            <a href=""""),_display_(Seq[Any](/*24.39*/routes/*24.45*/.BuildingController.buildings)),format.raw/*24.74*/("""">Buildings</a>
-                        </li>
-                        <li class=""""),_display_(Seq[Any](/*26.37*/("active".when(nav == "tasks2")))),format.raw/*26.69*/("""">
-                            <a href=""""),_display_(Seq[Any](/*27.39*/routes/*27.45*/.Application.tasks2)),format.raw/*27.64*/("""">Tasks2</a>
-                        </li>                      
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="container">
-
-            <div class="content">
-                
-                <div class="page-header">
-                    <h1>"""),_display_(Seq[Any](/*39.26*/title)),format.raw/*39.31*/("""</h1>
-                </div>
-
-                <div class="row">
-                    <div class="span14">
-                        """),_display_(Seq[Any](/*44.26*/content)),format.raw/*44.33*/("""
-                    </div>
-                </div>
-                
-            </div>
-
-            <footer>
-                <p>
-                    <a href="http://www.playframework.org">www.playframework.org</a>
-                </p>
-            </footer>
-
-        </div>
-        
-    </body>
-</html>
-"""))}
+<head>
+<title>Form samples</title>
+<link rel="stylesheet" media="screen" href=""""),_display_(Seq[Any](/*6.46*/routes/*6.52*/.Assets.at("stylesheets/bootstrap.css"))),format.raw/*6.91*/("""">
+<link rel="stylesheet" media="screen" href=""""),_display_(Seq[Any](/*7.46*/routes/*7.52*/.Assets.at("stylesheets/main.css"))),format.raw/*7.86*/("""">
+<link rel="shortcut icon" type="image/png" href=""""),_display_(Seq[Any](/*8.51*/routes/*8.57*/.Assets.at("images/favicon.png"))),format.raw/*8.89*/("""">
+<script src=""""),_display_(Seq[Any](/*9.15*/routes/*9.21*/.Assets.at("javascripts/jquery-1.7.1.min.js"))),format.raw/*9.66*/("""" type="text/javascript"></script>
+</head>
+<body>
+	<div class="topbar">
+		<div class="fill">
+			<div class="container">
+				<a class="brand" href=""""),_display_(Seq[Any](/*15.29*/routes/*15.35*/.Application.index())),format.raw/*15.55*/("""">Forms</a>
+				<ul class="nav">
+					<li class=""""),_display_(Seq[Any](/*17.18*/(" active".when(nav=="tasks")))),format.raw/*17.48*/(""""><a
+						href=""""),_display_(Seq[Any](/*18.14*/routes/*18.20*/.Application.tasks)),format.raw/*18.38*/("""">Tasks</a></li>
+					<li class=""""),_display_(Seq[Any](/*19.18*/(" active".when(nav=="buildings")))),format.raw/*19.52*/(""""><a
+						href=""""),_display_(Seq[Any](/*20.14*/routes/*20.20*/.BuildingController.buildings)),format.raw/*20.49*/("""">Buildings</a></li>
+					<li class=""""),_display_(Seq[Any](/*21.18*/(" active".when(nav=="tasks2")))),format.raw/*21.49*/(""""><a
+						href=""""),_display_(Seq[Any](/*22.14*/routes/*22.20*/.Application.tasks2)),format.raw/*22.39*/("""">Tasks2</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="content">
+			<div class="page-header">
+				<h1>"""),_display_(Seq[Any](/*30.10*/title)),format.raw/*30.15*/("""</h1>
+			</div>
+			<div class="row">
+				<div class="span14">"""),_display_(Seq[Any](/*33.26*/content)),format.raw/*33.33*/("""</div>
+			</div>
+		</div>
+		<footer>
+			<p>
+				<a href="http://www.playframework.org">www.playframework.org</a>
+			</p>
+		</footer>
+	</div>
+</body>
+</html>"""))}
     }
     
     def render(title:Html,nav:String,content:Html) = apply(title,nav)(content)
@@ -90,11 +73,11 @@ Seq[Any](format.raw/*1.48*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Sat Dec 08 17:32:27 EET 2012
+                    DATE: Sat Dec 22 23:55:07 EET 2012
                     SOURCE: C:/play-2.0.4/samples/scala/todolist/app/views/main.scala.html
-                    HASH: d85689a849c94e9dc38f7784768957563c6ffe1f
-                    MATRIX: 514->1|637->47|798->173|812->179|872->218|963->274|977->280|1032->314|1129->375|1144->381|1198->413|1259->438|1274->444|1341->489|1588->700|1603->706|1645->726|1766->811|1819->842|1896->883|1911->889|1951->907|2065->985|2122->1020|2199->1061|2214->1067|2265->1096|2383->1178|2437->1210|2514->1251|2529->1257|2570->1276|2906->1576|2933->1581|3099->1711|3128->1718
-                    LINES: 19->1|22->1|29->8|29->8|29->8|30->9|30->9|30->9|31->10|31->10|31->10|32->11|32->11|32->11|39->18|39->18|39->18|41->20|41->20|42->21|42->21|42->21|44->23|44->23|45->24|45->24|45->24|47->26|47->26|48->27|48->27|48->27|60->39|60->39|65->44|65->44
+                    HASH: a8283eb9dfc1acdfe549bb4f8d559d6da2881260
+                    MATRIX: 514->1|637->47|781->156|795->162|855->201|939->250|953->256|1008->290|1097->344|1111->350|1164->382|1217->400|1231->406|1297->451|1487->605|1502->611|1544->631|1632->683|1684->713|1739->732|1754->738|1794->756|1865->791|1921->825|1976->844|1991->850|2042->879|2117->918|2170->949|2225->968|2240->974|2281->993|2467->1143|2494->1148|2595->1213|2624->1220
+                    LINES: 19->1|22->1|27->6|27->6|27->6|28->7|28->7|28->7|29->8|29->8|29->8|30->9|30->9|30->9|36->15|36->15|36->15|38->17|38->17|39->18|39->18|39->18|40->19|40->19|41->20|41->20|41->20|42->21|42->21|43->22|43->22|43->22|51->30|51->30|54->33|54->33
                     -- GENERATED --
                 */
             

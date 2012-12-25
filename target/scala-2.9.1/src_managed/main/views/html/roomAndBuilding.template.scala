@@ -17,35 +17,34 @@ object roomAndBuilding extends BaseScalaTemplate[play.api.templates.Html,Format[
 
     /**/
     def apply/*1.2*/(rb: List[(Room, Building)]):play.api.templates.Html = {
-        _display_ {import helper._
+        _display_ {import helper._ 
 
-def /*5.2*/title/*5.7*/:play.api.templates.Html = {_display_(
+def /*3.2*/title/*3.7*/:play.api.templates.Html = {_display_(
 
-Seq[Any](format.raw/*5.11*/("""
-    Add a new contact <small><a href="routes.Application.createRoom()">Or edit an existing contact</a></small>
+Seq[Any](format.raw/*3.11*/(""" Add a new contact
+<small><a href="routes.Application.createRoom()">Or edit an
+		existing contact</a></small>
 """)))};
-Seq[Any](format.raw/*1.30*/("""
+Seq[Any](format.raw/*1.30*/(""" 
+"""),format.raw/*6.2*/(""" 
+"""),_display_(Seq[Any](/*7.2*/main(title, nav = "buildings")/*7.32*/ {_display_(Seq[Any](format.raw/*7.34*/("""
 
-"""),format.raw/*4.1*/("""
-"""),format.raw/*7.2*/("""
-
-
-"""),_display_(Seq[Any](/*10.2*/main(title, nav = "buildings")/*10.32*/ {_display_(Seq[Any](format.raw/*10.34*/("""
-    
-    <br>
-    <br>
+<br>
+<br>
 
 <table border="1">
-    
-        """),_display_(Seq[Any](/*17.10*/rb/*17.12*/.map/*17.16*/ { roomAndBuilding: (Room, Building) =>_display_(Seq[Any](format.raw/*17.55*/("""
-            <tr>
-                <td>"""),_display_(Seq[Any](/*19.22*/roomAndBuilding/*19.37*/._1.number.toString)),format.raw/*19.56*/("""</td><td> """),_display_(Seq[Any](/*19.67*/roomAndBuilding/*19.82*/._2.address)),format.raw/*19.93*/("""</td>
-   
-            </tr>
-        """)))})),format.raw/*22.10*/("""
+
+	"""),_display_(Seq[Any](/*14.3*/rb/*14.5*/.map/*14.9*/ { roomAndBuilding: (Room, Building) =>_display_(Seq[Any](format.raw/*14.48*/("""
+	<tr>
+		<td>"""),_display_(Seq[Any](/*16.8*/roomAndBuilding/*16.23*/._1.number.toString)),format.raw/*16.42*/("""</td>
+		<td>"""),_display_(Seq[Any](/*17.8*/roomAndBuilding/*17.23*/._2.address)),format.raw/*17.34*/("""</td>
+
+	</tr>
+	""")))})),format.raw/*20.3*/("""
 </table>
-    
-""")))})))}
+
+""")))})),format.raw/*23.2*/("""
+"""))}
     }
     
     def render(rb:List[scala.Tuple2[Room, Building]]) = apply(rb)
@@ -57,11 +56,11 @@ Seq[Any](format.raw/*1.30*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Sat Dec 08 17:32:27 EET 2012
+                    DATE: Sat Dec 22 23:54:14 EET 2012
                     SOURCE: C:/play-2.0.4/samples/scala/todolist/app/views/roomAndBuilding.scala.html
-                    HASH: d7c82ca6f1fb0c901c41fefcb6d3e80b5fffdde2
-                    MATRIX: 543->1|648->54|660->59|727->63|881->29|911->51|939->178|981->185|1020->215|1060->217|1161->282|1172->284|1185->288|1262->327|1339->368|1363->383|1404->402|1451->413|1475->428|1508->439|1580->479
-                    LINES: 19->1|22->5|22->5|24->5|27->1|29->4|30->7|33->10|33->10|33->10|40->17|40->17|40->17|40->17|42->19|42->19|42->19|42->19|42->19|42->19|45->22
+                    HASH: baaedb8fb171feba2c7d09946b7caddf6bb9f8ad
+                    MATRIX: 543->1|649->52|661->57|728->61|881->29|910->175|948->179|986->209|1025->211|1102->253|1112->255|1124->259|1201->298|1252->314|1276->329|1317->348|1366->362|1390->377|1423->388|1473->407|1519->422
+                    LINES: 19->1|22->3|22->3|24->3|28->1|29->6|30->7|30->7|30->7|37->14|37->14|37->14|37->14|39->16|39->16|39->16|40->17|40->17|40->17|43->20|46->23
                     -- GENERATED --
                 */
             
