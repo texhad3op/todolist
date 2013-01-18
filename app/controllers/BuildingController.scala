@@ -17,7 +17,9 @@ object BuildingController extends Controller {
     mapping("name" -> nonEmptyText, "address" -> text, "description" -> text)((name, address, description) => Building(0, name, address, description))((building: Building) => Some((building.name, building.address, building.description))))
 
   val eventForm = Form(
-    mapping("name" -> nonEmptyText, "description" -> nonEmptyText)((name, description) => Event(0, new Date(System.currentTimeMillis), name, description, 0))((event: Event) => Some((event.name, event.description))))
+    mapping("name" -> nonEmptyText, "description" -> nonEmptyText)
+    ((name, description) => Event(0, new Date(System.currentTimeMillis), name, description, 0))
+    ((event: Event) => Some((event.name, event.description))))
 
   def buildings = Action {
     Ok(views.html.buildings(Building.all()))
